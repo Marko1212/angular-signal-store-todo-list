@@ -5,5 +5,11 @@
     <a href="https://angular-university.io">angular-university.io</a>
   </div>
 
-  <todos-list />
+  @if (!store.loading()) {
+      <todos-list />
+  } 
+  @else {
+    <mat-spinner />
+  }
+
 </div>

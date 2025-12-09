@@ -3,10 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { TodosStore } from './store/todos.store';
 import { JsonPipe } from '@angular/common';
 import { TodosList } from "./todos-list/todos-list";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 
 @Component({
   selector: 'app-root',
-  imports: [TodosList],
+  imports: [TodosList, MatProgressSpinnerModule],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

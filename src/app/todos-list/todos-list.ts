@@ -14,11 +14,22 @@ import { MatInputModule } from '@angular/material/input';
     MatInputModule,
     MatIconModule,
     MatButtonToggleModule,
-    MatListModule,
+    MatListModule
   ],
   templateUrl: './todos-list.html',
   styleUrl: './todos-list.scss',
 })
 export class TodosList {
-  store = inject(TodosStore)
+
+  store = inject(TodosStore);
+
+  async onAddTodo(title: string) {
+    await this.store.addTodo(title);
+  }
+
+  async onDeleteTodo(id: string, event: MouseEvent) {
+    event.stopPropagation();
+
+    await this.store.deleteTodo(id);
+  }
 }
